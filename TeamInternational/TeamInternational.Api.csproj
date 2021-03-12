@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TeamInternational.ApplicationService\TeamInternational.ApplicationService.csproj" />
+    <ProjectReference Include="..\TeamInternational.DomainService\TeamInternational.DomainService.csproj" />
+    <ProjectReference Include="..\TeamInternational.RepositoryService\TeamInternational.RepositoryService.csproj" />
+  </ItemGroup>
+
+
+</Project>
