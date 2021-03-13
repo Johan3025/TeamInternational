@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="BlogDomainService.cs~RF284d62ea.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TeamInternational.Domain\TeamInternational.Domain.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using TeamInternational.Domain.Abstraction;
 using TeamInternational.Domain.Entities;
 
@@ -6,16 +8,16 @@ namespace TeamInternational.DomainService
 {
     public class BlogDomainService : IBlogDomainService
     {
-        private readonly IBlogRepositoryService blogRepositoryService;
+        private readonly IUnitOfWork unitOfWork;
 
-        public BlogDomainService(IBlogRepositoryService blogRepositoryService)
+        public BlogDomainService(IUnitOfWork unitOfWork)
         {
-            this.blogRepositoryService = blogRepositoryService;
+            this.unitOfWork = unitOfWork;
         }
 
-        public Blog Get()
+        public IList<Blog> Get()
         {
-            return blogRepositoryService.Get();
+            return unitOfWork.Blog.GetAll().ToList();
         }
     }
 }

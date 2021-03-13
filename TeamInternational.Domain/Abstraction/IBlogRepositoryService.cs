@@ -2,8 +2,7 @@
 
 namespace TeamInternational.Domain.Abstraction
 {
-    public interface IBlogRepositoryService
+    public interface IBlogRepositoryService : IRepository<Blog>
     {
-        Blog Get();
     }
 }

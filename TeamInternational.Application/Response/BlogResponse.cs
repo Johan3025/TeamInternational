@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TeamInternational.Domain.Entities;
 
 namespace TeamInternational.Application.Response
 {
     public class BlogResponse
     {
-        public int Id { get; set; }
-        public string BlogName { get; set; }
+        public IList<Blog> Blog { get; set; }
     }
 }

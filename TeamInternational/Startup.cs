@@ -34,7 +34,7 @@ namespace TeamInternational
 
             services.AddScoped<IBlogDomainService, BlogDomainService>();
 
-            services.AddScoped<IBlogRepositoryService, BlogRepositoryService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddDbContext<RepositoryContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));

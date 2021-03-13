@@ -6,18 +6,12 @@ using TeamInternational.RepositoryService.Context;
 
 namespace TeamInternational.RepositoryService
 {
-    public class BlogRepositoryService : IBlogRepositoryService
+    public class BlogRepositoryService : Repository<Blog>, IBlogRepositoryService
     {
-        private readonly RepositoryContext context;
 
-        public BlogRepositoryService(RepositoryContext context)
+        public BlogRepositoryService(RepositoryContext context) : base(context)
         {
-            this.context = context;
         }
 
-        public Blog Get()
-        {            
-            return context.Blogs.FirstOrDefault();
-        }
     }
 }
