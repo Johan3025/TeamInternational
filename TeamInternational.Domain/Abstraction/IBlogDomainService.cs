@@ -5,6 +5,14 @@ namespace TeamInternational.Domain.Abstraction
 {
     public interface IBlogDomainService
     {
-        IList<Blog> Get();
+        IList<Blog> GetAll();
+
+        Blog GetPlayerById(int id);
+
+        bool AddBlog(Blog blog);
+
+        bool UpdateBlog(Blog blog);
+
+        bool DeleteBlog(Blog blog);
     }
 }

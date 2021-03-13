@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Request\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TeamInternational.Domain\TeamInternational.Domain.csproj" />
   </ItemGroup>
 
