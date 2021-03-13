@@ -6,9 +6,16 @@ namespace TeamInternational.DomainService
 {
     public class BlogDomainService : IBlogDomainService
     {
+        private readonly IBlogRepositoryService blogRepositoryService;
+
+        public BlogDomainService(IBlogRepositoryService blogRepositoryService)
+        {
+            this.blogRepositoryService = blogRepositoryService;
+        }
+
         public Blog Get()
         {
-            throw new NotImplementedException();
+            return blogRepositoryService.Get();
         }
     }
 }

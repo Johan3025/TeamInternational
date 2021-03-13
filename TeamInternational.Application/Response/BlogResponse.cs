@@ -6,5 +6,7 @@ namespace TeamInternational.Application.Response
 {
     public class BlogResponse
     {
+        public int Id { get; set; }
+        public string BlogName { get; set; }
     }
 }

@@ -16,9 +16,16 @@ namespace TeamInternational.Api.Controllers
         }
 
         [HttpGet]
-        public BlogResponse Get()
+        public IActionResult Get()
         {
-            return blogApplicationService.Get();
+            var response = blogApplicationService.Get();
+
+            if (response == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(response);
         }
     }
 }

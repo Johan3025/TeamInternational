@@ -1,16 +1,18 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System;
 using TeamInternational.Application.Abstraction;
 using TeamInternational.ApplicationService;
+using TeamInternational.ApplicationService.mapping;
 using TeamInternational.Domain.Abstraction;
 using TeamInternational.DomainService;
 using TeamInternational.RepositoryService;
-using Microsoft.OpenApi;
-using System;
-using Microsoft.OpenApi.Models;
+using TeamInternational.RepositoryService.Context;
 
 namespace TeamInternational
 {
@@ -33,6 +35,13 @@ namespace TeamInternational
             services.AddScoped<IBlogDomainService, BlogDomainService>();
 
             services.AddScoped<IBlogRepositoryService, BlogRepositoryService>();
+
+            services.AddDbContext<RepositoryContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddAutoMapper(new[] { typeof(Automapping)});
 
             AddSwagger(services);
         }
